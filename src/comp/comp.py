@@ -21,10 +21,14 @@ humans = [
     Human("David", 31),
 ]
 
+# for human in humans:
+#     if human
+
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = []
+check = "d"
+a = [human for human in humans if human.lower().startswith(check)]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
