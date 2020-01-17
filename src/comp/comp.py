@@ -27,8 +27,8 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-check = "d"
-a = [human for human in humans if human.lower().startswith(check)]
+check = "D"
+a = [human.name for human in humans if human.name[0] == check]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone

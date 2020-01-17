@@ -8,6 +8,8 @@ class City:
         self.name = name
         self.lat = lat
         self.lon = lon
+    def __str__(self):
+        return f'{self.name}, {self.lat}, {self.lon}'
 
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -33,10 +35,16 @@ def cityreader(cities=[]):
         readCSV = csv.reader(csvfile)
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-        for city in readCSV:
-            cities.append(city[0])
-            cities.append(city[3])
-            cities.append(city[4])
+        for city in enumerate(readCSV):
+            # if city > 0:
+            # cities.append(city[0])
+            # player = Player(input("Please enter your name: "), room['outside']) ??
+            # cities.append(city[3])
+            # cities.append(city[4])
+            name = city[0]
+            lat = float(city[3])
+            lon = float(city[4])
+            cities.append(City(name, lat, lon))
     
     return cities
 
