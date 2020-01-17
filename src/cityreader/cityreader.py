@@ -35,18 +35,20 @@ def cityreader(cities=[]):
         readCSV = csv.reader(csvfile)
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-        for city in enumerate(readCSV):
-            # if city > 0:
+        for key, city in enumerate(readCSV):
+            if key > 0:
             # cities.append(city[0])
             # player = Player(input("Please enter your name: "), room['outside']) ??
             # cities.append(city[3])
             # cities.append(city[4])
-            name = city[0]
-            lat = float(city[3])
-            lon = float(city[4])
-            cities.append(City(name, lat, lon))
+                name = city[0]
+            # lat = float(city[3])
+            # lon = float(city[4])
+                lat = 4
+                lon = 23
+                cities.append(City(name, lat, lon))
     
-    return cities
+        return cities
 
 cityreader(cities)
 
